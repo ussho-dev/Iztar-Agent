@@ -1645,6 +1645,9 @@ export async function generateTweetActions({
                 response
             );
             const { actions } = parseActionResponseFromText(response.trim());
+            actions.quote = false;
+            actions.retweet = false;
+
             if (actions) {
                 console.debug("Parsed tweet actions:", actions);
                 return actions;
